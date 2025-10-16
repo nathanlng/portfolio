@@ -1,0 +1,4 @@
+# Ignorer tous les dossiers config
+config/
+**/config/
+src/config/
