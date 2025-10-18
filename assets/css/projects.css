@@ -1,0 +1,98 @@
+body{
+    padding: 0px;
+    background-color: var(--background-color-one);
+}
+
+main {
+    width: 100vw;
+    height: 130vh;
+    padding: 24px;
+    box-sizing: border-box;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    font-family: var(--font-primary);
+    background-color: aqua;
+}
+
+header{
+    grid-area: 1 / 1 / 2 / 11 !important;
+    padding: 34px;
+    background-color: var(--background-color-two);
+    border-radius: var(--border-radius-one);
+}
+
+#info{
+    grid-area: 2 / 8 / 8 / 11;
+    background-color: blueviolet !important;
+    background-color: var(--background-color-two);
+    border-radius: var(--border-radius-one);
+}
+
+#picture {
+    grid-area: 2 / 1 / 8 / 8;
+    background-color: blue !important;
+    background-color: var(--background-color-two);
+    border-radius: var(--border-radius-one);
+}
+
+#div1{
+    grid-area: 11 / 1 / 14 / 11;
+    background-color: var(--background-color-two);
+    border-radius: var(--border-radius-one);
+}
+#div2{
+    grid-area: 8 / 6 / 11 / 11;
+    background-color: var(--background-color-two);
+    border-radius: var(--border-radius-one);
+}
+
+#skills{
+    background-color: var(--background-color-two);
+    grid-area: 8 / 1 / 11 / 6;
+}
+
+/* .parent {
+    width: 100vw;
+    height: 130vh;
+display: grid;
+grid-template-columns: repeat(10, 1fr);
+grid-template-rows: repeat(13, 1fr);
+grid-column-gap: 24px;
+grid-row-gap: 24px;
+}
+.div1 { grid-area: 1 / 1 / 2 / 11;
+background-color: #414a37; }
+.div2 { grid-area: 2 / 8 / 8 / 11;
+background-color: #414a37; }
+.div3 { grid-area: 2 / 1 / 8 / 8; background-color: #414a37; }
+.div4 { grid-area: 11 / 1 / 14 / 11; background-color: #414a37; }
+.div5 { grid-area: 8 / 6 / 11 / 11; background-color: #414a37; }
+.div6 { grid-area: 8 / 1 / 11 / 6; background-color: #414a37; } */
+
+:root {
+  /* Couleurs principales */
+  --primary-color: #414a37;
+  --secondary-color: #99744a;
+  --background-color-one: #dbc2a6;
+  --background-color-two: #414a37;
+  --text-color: #dbc2a6;
+  --disabled-text-color: #dbc2a6c4;
+  --secondary-text-color: #414a37;
+
+  /* Typographie */
+  --font-primary: "Outfit", sans-serif;
+  --font-secondary: "Instrument Sans", sans-serif;
+  --font-size: 16px;
+
+  /* Espacements */
+  --padding-one: 24px;
+  --padding-two: 12px;
+  --margin: 24px;
+  --gap: 8px;
+
+  /* Bordures et ombres */
+  --border-radius-one: 20px;
+  --border-radius-two: 16px;
+}
