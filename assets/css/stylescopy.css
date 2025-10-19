@@ -29,9 +29,6 @@
   padding: 0px;
 }
 
-body{
-  visibility: hidden;
-}
 
 section {
   /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
@@ -56,6 +53,7 @@ section {
 }
 
 body {
+  visibility: hidden;
   width: 100vw;
   height: 100vh;
   padding: 24px;
