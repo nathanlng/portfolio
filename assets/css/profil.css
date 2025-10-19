@@ -14,7 +14,7 @@ body {
     background-color: var(--background-color-one);
     display: flex;
     gap: var(--gap);
-    height: 100vh;
+    height: 100vh !important;
     width: 100vw;
 
     padding: 24px;
@@ -22,6 +22,7 @@ body {
     box-sizing: border-box;
     flex-direction: column;
     font-family: var(--font-primary);
+    min-height: 0;
 }
 
 header {
@@ -35,6 +36,7 @@ header {
     align-items: center;
     justify-content: space-between;
     text-transform: uppercase;
+    
 
     > #title {
         display: flex;
@@ -85,76 +87,129 @@ section{
 
 main{
     flex: 1;
+    min-height: 0;
     border-radius: var(--border-radius-one);
-    position: relative;
     gap: var(--gap);
     display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    position: relative;
     
-    > #cont{
-        border-radius: var(--border-radius-one);
-        flex: 1;
+    > #upper-part{
         width: 100%;
+        height: 70%;
+        max-height: 70% !important;
         display: flex;
-        flex-direction: column;
         gap: var(--gap);
-        
-        > #upper-part{
-            width: 100%;
-            height: 70%;
+
+        > :first-child{
+            width: 70%;
+            height: 100%;
             display: flex;
+            flex-direction: column;
             gap: var(--gap);
 
-            > :first-child{
-                width: 70%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: var(--gap);
-
-                > h1 {
-                    margin: var(--margin-two) 0px var(--margin-two) var(--margin);
-                    font-size: 3em;
-                }
-
-                > p{
-                    margin-left: var(--margin);
-                    font-size: 1.25em;
-                    width: 75%;
-                    line-height: 140%;
-                }
+            > h1 {
+                margin: var(--margin-two) 0px var(--margin-two) var(--margin);
+                font-size: 3em;
             }
-            > :last-child{
-                flex: 1;
-                padding: 0px;
 
-                > img{
-                    border-radius: var(--border-radius-one);
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
+            > p{
+                margin-left: var(--margin);
+                font-size: 1.25em;
+                width: 75%;
+                line-height: 140%;
             }
         }
-        
-        > #lower-part{
+        > :last-child{
             flex: 1;
-            width: 100%;
-            display: flex;
-            gap: var(--gap);
+            padding: 0px;
+            background-color: red;
+            min-height: 0;
+            max-height: 100%;
             
-            > :first-child{
-                flex: 1;
-                background-color: var(--secondary-color);
-                color: var(--secondary-text-color);
-                position: relative;
-                padding: 0px;
-            }
-            > :last-child{
-                flex: 1;
-                
+            > img{
+                border-radius: var(--border-radius-one);
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
+    
+    > #lower-part{
+        min-height: 0;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        gap: var(--gap);
+        
+        > :first-child{
+            flex: 1;
+            background-color: var(--secondary-color);
+            color: var(--secondary-text-color);
+            position: relative;
+            padding: 0px;
+        }
+        > :last-child{
+            flex: 1;
+
+            > h2{
+                margin-bottom: var(--margin);
+                font-size: 170%;
+            }
+
+            > .exp-container{
+                display: flex;
+                height: fit-content;
+                gap: 10px;
+
+                > .exp-margin{
+                    width: 5%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 14px;
+
+                    > :first-child{
+                        background-color: var(--secondary-color);
+                        border-radius: 50%;
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    > :last-child{
+                        background-color: var(--secondary-color);
+                        width: 3px;
+                        flex: 1;
+                    }
+                }
+
+                > .exp-content{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 4px;
+
+                    > h4{
+                        font-weight: bold;
+                        > span{
+                            margin-left: 4px;
+                            font-weight: lighter;
+                        }
+                    }
+
+
+                    > ul{
+                        margin-top: 4px;
+                        position: relative;
+                        left: 20px;
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 #overlay{

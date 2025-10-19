@@ -52,7 +52,7 @@ function animerVers(idCible) {
 
   setTimeout(() => {
     window.location.href = "./profil.html";
-  }, 1000); // pause de 3 secondes
+  }, 1300); // pause de 1.3 secondes
 }
 
 function resetDiv() {
