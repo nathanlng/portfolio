@@ -6,43 +6,60 @@
     <title>Nathan Luong</title>
     <link rel="stylesheet" href="assets/css/projects.css">
     <script defer src="assets/js/script.js"></script>
+    <script defer src="assets/js/carroussel.js"></script>
 </head>
 <body>
+    <header class="slide-in-bottom">
+        <div id="title">
+            <span class="italic">Nathan</span>
+            <span>Luong</span>
+        </div>
+        <nav>
+            <a href="">Projets</a>
+            <a href="">About me</a>
+            <a href="">Contact</a>
+        </nav>
+    </header>
     <main>
-        <header class="slide-in-bottom">
-            <div id="title">
-                <span class="italic">Nathan</span>
-                <span>Luong</span>
+        <section id="projects-nav">
+            <button class="nav-item" data-target="1">Page 1</button>
+            <button class="nav-item" data-target="2">Page 2</button>
+
+        </section>
+        <div id="projects-container">
+            <div id="project-header">
+                <section id="contentC" class="content">Contenu C - Page 1</section>
             </div>
-            <nav>
-                <a href="">Projets</a>
-                <a href="">About me</a>
-                <a href="">Contact</a>
-            </nav>
-        </header>
-        <section id="info">
+            <div id="project-content">
 
-        </section>
-        <section id="picture">
-
-        </section>
-        <section id="div1">
-
-        </section>
-        <section id="div2">
-
-        </section>
-        <section id="skills">
-
-        </section>
-
+                <div id="left-part">
+                    <!-- Carrousel A -->
+                    <section class="content-block">
+                        <div class="image-container">
+                            <div class="image-track" id="trackA">
+                            <img src="" alt="">
+                            <img src="" alt="">
+                            </div>
+                        </div>
+                        <p>Contenu A fixe</p>
+                    </section>
+                    
+                    <section id="contentA" class="content">Contenu A - Page 1</section>
+                </div>
+                <div id="right-part">
+                    <!-- Carrousel B -->
+                    <section class="content-block">
+                        <div class="image-container">
+                            <div class="image-track" id="trackB">
+                            <img src="" alt="">
+                            <img src="" alt="">
+                            </div>
+                        </div>
+                        <p>Contenu B fixe</p>
+                    </section>
+                    <section id="contentB" class="content">Contenu B - Page 1</section>
+                </div>
+            </div>
+        </div>
     </main>
-    <!-- <div class="parent">
-<div class="div1"> </div>
-<div class="div2"> </div>
-<div class="div3"> </div>
-<div class="div4"> </div>
-<div class="div5"> </div>
-<div class="div6"> </div>
-</div> -->
 </body>

@@ -1,75 +1,206 @@
-body{
-    padding: 0px;
-    background-color: var(--background-color-one);
+@font-face {
+  font-family: "Outfit";
+  src: url("../font/Outfit/static/Outfit-Regular.ttf") format("truetype");
+  font-weight: 400;
 }
 
-main {
-    width: 100vw;
-    height: 130vh;
-    padding: 24px;
-    box-sizing: border-box;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(13, 1fr);
-    grid-column-gap: 24px;
-    grid-row-gap: 24px;
+@font-face {
+  font-family: "Outfit";
+  src: url("../font/Outfit/static/Outfit-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../font/Outfit/static/Outfit-Light.ttf") format("truetype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("../font/Instrument_Sans/static/InstrumentSans_Condensed-Italic.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.italic {
     font-family: var(--font-primary);
-    background-color: aqua;
+    font-style: italic;
+    font-weight: 100 !important;
 }
 
-header{
-    grid-area: 1 / 1 / 2 / 11 !important;
-    padding: 34px;
-    background-color: var(--background-color-two);
-    border-radius: var(--border-radius-one);
-}
-
-#info{
-    grid-area: 2 / 8 / 8 / 11;
-    background-color: blueviolet !important;
-    background-color: var(--background-color-two);
-    border-radius: var(--border-radius-one);
-}
-
-#picture {
-    grid-area: 2 / 1 / 8 / 8;
-    background-color: blue !important;
-    background-color: var(--background-color-two);
-    border-radius: var(--border-radius-one);
-}
-
-#div1{
-    grid-area: 11 / 1 / 14 / 11;
-    background-color: var(--background-color-two);
-    border-radius: var(--border-radius-one);
-}
-#div2{
-    grid-area: 8 / 6 / 11 / 11;
-    background-color: var(--background-color-two);
-    border-radius: var(--border-radius-one);
-}
-
-#skills{
-    background-color: var(--background-color-two);
-    grid-area: 8 / 1 / 11 / 6;
-}
-
-/* .parent {
+body{
+    font-family: var(--font-primary);
+    background-color: var(--background-color-one);
+    padding: var(--padding-one);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     width: 100vw;
-    height: 130vh;
-display: grid;
-grid-template-columns: repeat(10, 1fr);
-grid-template-rows: repeat(13, 1fr);
-grid-column-gap: 24px;
-grid-row-gap: 24px;
+    gap: var(--gap);
 }
-.div1 { grid-area: 1 / 1 / 2 / 11;
-background-color: #414a37; }
-.div2 { grid-area: 2 / 8 / 8 / 11;
-background-color: #414a37; }
-.div3 { grid-area: 2 / 1 / 8 / 8; background-color: #414a37; }
-.div4 { grid-area: 11 / 1 / 14 / 11; background-color: #414a37; }
-.div5 { grid-area: 8 / 6 / 11 / 11; background-color: #414a37; }
-.div6 { grid-area: 8 / 1 / 11 / 6; background-color: #414a37; } */
+
+header {
+    min-height: 10vh;
+    height: 10vh;
+    background-color: var(--background-color-two);
+    border-radius: var(--border-radius-one);
+    display: flex;
+    box-sizing: border-box;
+    padding: var(--padding-one);
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    
+
+    > #title {
+        display: flex;
+        color: var(--text-color);
+        gap: 8px;
+        font-size: 130%;
+
+        > :last-child {
+        font-weight: 400;
+        }
+    }
+
+    > nav {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+        font-family: var(--font-primary);
+        font-weight: 200;
+
+        > a {
+        transition: color 0.2s ease, font-weight 0.2s ease;
+        text-decoration: none;
+        color: var(--text-color);
+        }
+
+        > a:hover {
+        font-weight: 450;
+        color: var(--text-color);
+        }
+    }
+
+    > nav:has(a:hover) a:not(:hover) {
+        color: var(--disabled-text-color);
+    }
+}
+
+section{
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.141);
+    background-color: var(--background-color-two);
+    border-radius: var(--border-radius-one);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    padding: var(--padding-one);
+
+    box-sizing: border-box;
+}
+
+.content {
+  padding: var(--padding-one);
+  background: var(--background-color-two);
+  border-radius: var(--border-radius-one);
+  transition: opacity .3s;
+}
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.content-block {
+  text-align: center;
+}
+
+/* Container fixe avec border-radius */
+.image-container {
+  width: 300px;           /* largeur fixe du carrousel */
+  height: 200px;          /* hauteur fixe */
+  overflow: hidden;       /* pour que l'image ne déborde pas */
+  border-radius: 20px;    /* border-radius fixe */
+  margin: auto;
+  position: relative;
+}
+
+/* Track qui glisse */
+.image-track {
+  display: flex;
+  width: 200%;             /* 2 images côte à côte */
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Images qui remplissent entièrement le container */
+.image-track img {
+  width: 50%;              /* chaque image prend 50% de la track */
+  height: 100%;
+  object-fit: cover;       /* pour que l'image remplisse le container sans déformation */
+  display: block;
+}
+
+
+main{
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    background-color: aqua;
+    min-height: 0;
+    display: flex;
+    gap: var(--gap);
+
+    > #projects-nav {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+    }
+
+    > #projects-container{
+        flex: 1;
+        /* width: 70vw;
+        height: 70vh; */
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+
+        > #project-header{
+            
+        }
+
+        > #project-content{
+            display: flex;
+            gap: var(--gap);
+            min-height: 0;
+            flex: 1;
+
+            > #left-part{
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                background-color: blue;
+                gap: var(--gap);
+            }
+            
+            > #right-part{
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                background-color: blueviolet;
+                gap: var(--gap);
+            }
+        }
+    }
+}
 
 :root {
   /* Couleurs principales */
@@ -90,7 +221,7 @@ background-color: #414a37; }
   --padding-one: 24px;
   --padding-two: 12px;
   --margin: 24px;
-  --gap: 8px;
+  --gap: 24px;
 
   /* Bordures et ombres */
   --border-radius-one: 20px;
