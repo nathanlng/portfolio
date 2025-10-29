@@ -107,74 +107,94 @@ section{
     box-sizing: border-box;
 }
 
-.content {
-  padding: var(--padding-one);
-  background: var(--background-color-two);
-  border-radius: var(--border-radius-one);
-  transition: opacity .3s;
-}
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.content-block {
-  text-align: center;
-}
-
-/* Container fixe avec border-radius */
-.image-container {
-  width: 300px;           /* largeur fixe du carrousel */
-  height: 200px;          /* hauteur fixe */
-  overflow: hidden;       /* pour que l'image ne déborde pas */
-  border-radius: 20px;    /* border-radius fixe */
-  margin: auto;
-  position: relative;
-}
-
-/* Track qui glisse */
-.image-track {
-  display: flex;
-  width: 200%;             /* 2 images côte à côte */
-  transition: transform 0.6s ease-in-out;
-}
-
-/* Images qui remplissent entièrement le container */
-.image-track img {
-  width: 50%;              /* chaque image prend 50% de la track */
-  height: 100%;
-  object-fit: cover;       /* pour que l'image remplisse le container sans déformation */
-  display: block;
-}
-
-
 main{
     width: 100%;
     height: 100%;
     flex: 1;
-    background-color: aqua;
     min-height: 0;
     display: flex;
     gap: var(--gap);
 
     > #projects-nav {
-        width: 25%;
+        width: 30%;
         display: flex;
         flex-direction: column;
         gap: var(--gap);
+        box-shadow: none;
+        border: transparent;
+        overflow: visible;
+        position: relative;
+
+        > .nav-item {
+            height: 6vh;
+            color: white;
+            padding: 20px 40px;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+
+        /* L’élément mobile beige */
+        > .highlight {
+            position: absolute;
+            left: 0;
+            width: 96%;
+            height: 8vh;
+            background-color: var(--background-color-one);
+            border-bottom-left-radius: var(--border-radius-one);
+            border-top-left-radius: var(--border-radius-one);
+            top: 0;
+            left: 4%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        
+        }
+
+
+        /* Coin inversé en haut à droite - tourné de 90deg */
+        > .highlight::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle at bottom left, transparent 20px, var(--background-color-one) 20px);
+            transform: rotate(90deg);
+            transform-origin: bottom right;
+        }
+
+        /* Coin inversé en bas à droite - tourné de -90deg */
+        > .highlight::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle at top left, transparent 20px, var(--background-color-one) 20px);
+        transform: rotate(-90deg);
+        transform-origin: top right;
+        }
     }
 
     > #projects-container{
         flex: 1;
-        /* width: 70vw;
-        height: 70vh; */
-        background-color: red;
         display: flex;
         flex-direction: column;
         gap: var(--gap);
 
         > #project-header{
-            
+            height: 8vh;
+
+            > :first-child{
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
         }
 
         > #project-content{
@@ -186,44 +206,101 @@ main{
             > #left-part{
                 display: flex;
                 flex-direction: column;
-                flex: 1;
-                background-color: blue;
+                width: 55%;
                 gap: var(--gap);
+
+                > :nth-child(1){
+                    height: 45%;
+                }
+                > :nth-child(2){
+                    flex: 1;
+                }
+                > :nth-child(3){
+                    height: 8vh;
+                    background-color: var(--secondary-color);
+                    color: var(--secondary-text-color);
+                }
             }
             
             > #right-part{
                 display: flex;
                 flex-direction: column;
                 flex: 1;
-                background-color: blueviolet;
                 gap: var(--gap);
+
+                > :nth-child(1){
+                    height: 35%;
+                }
+                > :nth-child(2){
+                    flex: 1;
+                }
             }
         }
     }
 }
 
+.content {
+    padding: var(--padding-one);
+    background: var(--background-color-two);
+    border-radius: var(--border-radius-one);
+    transition: opacity .3s;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.content-block {
+    text-align: center;
+}
+
+/* Container fixe avec border-radius */
+.image-container {
+    width: 300px;           /* largeur fixe du carrousel */
+    height: 200px;          /* hauteur fixe */
+    overflow: hidden;       /* pour que l'image ne déborde pas */
+    border-radius: 20px;    /* border-radius fixe */
+    margin: auto;
+    position: relative;
+}
+
+/* Track qui glisse */
+.image-track {
+    display: flex;
+    width: 200%;             /* 2 images côte à côte */
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Images qui remplissent entièrement le container */
+.image-track img {
+    width: 50%;              /* chaque image prend 50% de la track */
+    height: 100%;
+    object-fit: cover;       /* pour que l'image remplisse le container sans déformation */
+    display: block;
+}
+
 :root {
-  /* Couleurs principales */
-  --primary-color: #414a37;
-  --secondary-color: #99744a;
-  --background-color-one: #dbc2a6;
-  --background-color-two: #414a37;
-  --text-color: #dbc2a6;
-  --disabled-text-color: #dbc2a6c4;
-  --secondary-text-color: #414a37;
+    /* Couleurs principales */
+    --primary-color: #414a37;
+    --secondary-color: #99744a;
+    --background-color-one: #dbc2a6;
+    --background-color-two: #414a37;
+    --text-color: #dbc2a6;
+    --disabled-text-color: #dbc2a6c4;
+    --secondary-text-color: #414a37;
 
-  /* Typographie */
-  --font-primary: "Outfit", sans-serif;
-  --font-secondary: "Instrument Sans", sans-serif;
-  --font-size: 16px;
+    /* Typographie */
+    --font-primary: "Outfit", sans-serif;
+    --font-secondary: "Instrument Sans", sans-serif;
+    --font-size: 16px;
 
-  /* Espacements */
-  --padding-one: 24px;
-  --padding-two: 12px;
-  --margin: 24px;
-  --gap: 24px;
+    /* Espacements */
+    --padding-one: 24px;
+    --padding-two: 12px;
+    --margin: 24px;
+    --gap: 24px;
 
-  /* Bordures et ombres */
-  --border-radius-one: 20px;
-  --border-radius-two: 16px;
+    /* Bordures et ombres */
+    --border-radius-one: 20px;
+    --border-radius-two: 16px;
 }
