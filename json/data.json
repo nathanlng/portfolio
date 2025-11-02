@@ -1,7 +1,6 @@
 {
   "pages": {
     "1": {
-      "transform": "0%",
       "contents": {
         "contentA": "Contenu A - Page 1",
         "contentB": "Contenu B - Page 1",
@@ -10,7 +9,6 @@
       }
     },
     "2": {
-      "transform": "-25%",
       "contents": {
         "contentA": "Contenu A - Page 2",
         "contentB": "Contenu B - Page 2",
@@ -19,7 +17,6 @@
       }
     },
     "3": {
-      "transform": "-50%",
       "contents": {
         "contentA": "Contenu A - Page 3",
         "contentB": "Contenu B - Page 3",
@@ -28,7 +25,6 @@
       }
     },
     "4": {
-      "transform": "-75%",
       "contents": {
         "contentA": "Contenu A - Page 4",
         "contentB": "Contenu B - Page 4",

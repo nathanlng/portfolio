@@ -1,6 +1,6 @@
 
 
-const buttons = document.querySelectorAll(".nav-item");
+// const buttons = document.querySelectorAll(".nav-item");
 // Chargement des données
 let pagesData = null;
 
@@ -21,11 +21,6 @@ function loadPage(page) {
   }
   
   const pageData = pagesData[page];
-  
-  // Application de la transformation
-  trackA.style.transform = `translateX(${pageData.transform})`;
-  trackB.style.transform = `translateX(${pageData.transform})`;
-  
   // Mise à jour des contenus
   Object.entries(pageData.contents).forEach(([id, text]) => {
     const element = window[id]; // ou document.getElementById(id)
@@ -33,15 +28,7 @@ function loadPage(page) {
   });
 }
 
-// Gestion des événements sur les boutons
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const page = btn.dataset.target;
-    loadPage(page);
-  });
-});
 
-const items = document.querySelectorAll('.nav-item');
 const highlight = document.querySelector('.highlight');
 
 function moveHighlight(element) {
@@ -49,13 +36,68 @@ function moveHighlight(element) {
   highlight.style.height = element.offsetHeight + 'px';
 }
 
-items.forEach(item => {
-  item.addEventListener('click', () => {
-    document.querySelector('.active')?.classList.remove('active');
-    item.classList.add('active');
-    moveHighlight(item);
+// Position initiale
+moveHighlight(document.querySelector('.active'));
+
+const navItems = document.querySelectorAll('#projects-nav .nav-item');
+const carousels = document.querySelectorAll('.carousel');
+
+let currentIndices = Array.from(carousels).map(() => 0);
+let animating = Array.from(carousels).map(() => false);
+
+function goToSlide(targetIndex, carouselIndex) {
+  if (animating[carouselIndex] || targetIndex === currentIndices[carouselIndex]) return;
+  animating[carouselIndex] = true;
+
+  const carousel = carousels[carouselIndex];
+  const items = carousel.querySelectorAll('.carousel-item');
+  const current = items[currentIndices[carouselIndex]];
+  const next = items[targetIndex];
+
+  const direction = 1; // Toujours glisser vers la droite
+
+  next.style.transition = 'none';
+  next.style.transform = `translateX(${direction * 100}%)`;
+  next.style.opacity = '1';
+  next.style.zIndex = '3';
+
+  requestAnimationFrame(() => {
+    next.offsetHeight;
+
+    current.style.transition = 'transform 0.6s ease';
+    next.style.transition = 'transform 0.6s ease';
+
+    current.style.transform = `translateX(${-direction * 100}%)`;
+    next.style.transform = 'translateX(0%)';
+
+    current.addEventListener('transitionend', () => {
+      current.style.transition = '';
+      current.style.transform = '';
+      next.style.transition = '';
+      next.style.zIndex = '';
+      current.classList.remove('active');
+      next.classList.add('active');
+      animating[carouselIndex] = false;
+    }, { once: true });
+  });
+
+  currentIndices[carouselIndex] = targetIndex;
+}
+
+// Lier la navbar à tous les carrousels
+navItems.forEach(nav => {
+  nav.addEventListener('click', () => {
+    const index = parseInt(nav.dataset.target) - 1;
+    carousels.forEach((_, carouselIndex) => {
+      goToSlide(index, carouselIndex);
+    });
+    
+    // Mettre à jour la navbar
+    navItems.forEach(n => n.classList.remove('active'));
+    nav.classList.add('active');
+    loadPage(index + 1);
+    moveHighlight(nav);
   });
 });
 
-// Position initiale
-moveHighlight(document.querySelector('.active'));
+
