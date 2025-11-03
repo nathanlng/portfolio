@@ -65,7 +65,8 @@ header {
     text-transform: uppercase;
     
 
-    > #title {
+    > #title a{
+        text-decoration: none;
         display: flex;
         color: var(--text-color);
         gap: 8px;
@@ -77,11 +78,13 @@ header {
     }
 
     > nav {
-        width: 20%;
+        width: 15%;
+        min-width: 200px;
         display: flex;
-        justify-content: space-between;
         font-family: var(--font-primary);
         font-weight: 200;
+        gap: var(--gap-two);
+        justify-content: end;
 
         > a {
         transition: color 0.2s ease, font-weight 0.2s ease;
@@ -112,7 +115,7 @@ section{
     box-sizing: border-box;
 }
 
-main{
+#profil-main{
     flex: 1;
     min-height: 0;
     border-radius: var(--border-radius-one);
@@ -369,6 +372,7 @@ main{
     --margin: 24px;
     --margin-two: 48px;
     --gap: 24px;
+    --gap-two: 48px;
 
     /* Bordures et ombres */
     --border-radius-one: 20px;

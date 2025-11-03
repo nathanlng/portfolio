@@ -1,5 +1,4 @@
 
-
 // const buttons = document.querySelectorAll(".nav-item");
 // Chargement des données
 let pagesData = null;
