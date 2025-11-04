@@ -1,0 +1,168 @@
+#projects-main{
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    gap: var(--gap);
+
+    > #projects-nav {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+        box-shadow: none;
+        border: transparent;
+        overflow: visible;
+        position: relative;
+
+        > .nav-item {
+            height: 6vh;
+            color: white;
+            padding: 20px 40px;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+
+        /* L’élément mobile beige */
+        > .highlight {
+            position: absolute;
+            left: 0;
+            width: 96%;
+            height: 8vh;
+            background-color: var(--background-color-one);
+            border-bottom-left-radius: var(--border-radius-one);
+            border-top-left-radius: var(--border-radius-one);
+            top: 0;
+            left: 4%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        
+        }
+
+
+        /* Coin inversé en haut à droite - tourné de 90deg */
+        > .highlight::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle at bottom left, transparent 20px, var(--background-color-one) 20px);
+            transform: rotate(90deg);
+            transform-origin: bottom right;
+        }
+
+        /* Coin inversé en bas à droite - tourné de -90deg */
+        > .highlight::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle at top left, transparent 20px, var(--background-color-one) 20px);
+        transform: rotate(-90deg);
+        transform-origin: top right;
+        }
+    }
+
+    > #projects-container{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+
+        > #project-header{
+            height: 8vh;
+
+            > :first-child{
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        > #project-content{
+            display: flex;
+            gap: var(--gap);
+            min-height: 0;
+            flex: 1;
+
+            > #left-part{
+                display: flex;
+                flex-direction: column;
+                width: 55%;
+                gap: var(--gap);
+
+                > :nth-child(1){
+                    height: 45%;
+                }
+                > :nth-child(2){
+                    min-height: 0;
+                    flex: 1;
+                }
+                > :nth-child(3){
+                    height: 8vh;
+                    background-color: var(--secondary-color);
+                    color: var(--secondary-text-color);
+                }
+            }
+            
+            > #right-part{
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                gap: var(--gap);
+                min-height: 0;
+
+                > :nth-child(1){
+                    height: 35%;
+                }
+                > :nth-child(2){
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
+
+
+
+.carousel {
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    z-index: 2;
+}

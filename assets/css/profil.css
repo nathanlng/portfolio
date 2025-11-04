@@ -1,0 +1,176 @@
+#profil-main{
+    flex: 1;
+    min-height: 0;
+    border-radius: var(--border-radius-one);
+    gap: var(--gap);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    position: relative;
+    
+    > #upper-part{
+        width: 100%;
+        height: 70%;
+        max-height: 70% !important;
+        display: flex;
+        gap: var(--gap);
+
+        > :first-child{
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap);
+
+            > h1 {
+                margin: var(--margin-two) 0px var(--margin-two) var(--margin);
+                font-size: 3em;
+            }
+
+            > p{
+                margin-left: var(--margin);
+                font-size: 1.25em;
+                width: 75%;
+                line-height: 140%;
+            }
+        }
+        > :last-child{
+            flex: 1;
+            padding: 0px;
+            background-color: red;
+            min-height: 0;
+            max-height: 100%;
+            
+            > img{
+                border-radius: var(--border-radius-one);
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    
+    > #lower-part{
+        min-height: 0;
+        flex: 1;
+        width: 100%;
+        display: flex;
+        gap: var(--gap);
+        
+        > :first-child{
+            flex: 1;
+            background-color: var(--secondary-color);
+            color: var(--secondary-text-color);
+            position: relative;
+            padding: 0px;
+        }
+        > :last-child{
+            flex: 1;
+
+            > h2{
+                margin-bottom: var(--margin);
+                font-size: 1.7em;
+            }
+
+            > .exp-container{
+                display: flex;
+                height: fit-content;
+                gap: 10px;
+
+                > .exp-margin{
+                    width: 5%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 14px;
+
+                    > :first-child{
+                        background-color: var(--secondary-color);
+                        border-radius: 50%;
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    > :last-child{
+                        background-color: var(--secondary-color);
+                        width: 3px;
+                        flex: 1;
+                    }
+                }
+
+                > .exp-content{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 4px;
+
+                    > h4{
+                        font-weight: bold;
+                        > span{
+                            margin-left: 4px;
+                            font-weight: lighter;
+                        }
+                    }
+
+
+                    > ul{
+                        margin-top: 4px;
+                        position: relative;
+                        left: 20px;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+#overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-one);
+    background-color: var(--background-color-two);
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 0;
+    animation: fadeSlide 12s infinite;
+}
+
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 8s;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > svg{
+        height: 100px;
+        width: 100px;
+    }
+}
