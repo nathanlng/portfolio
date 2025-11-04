@@ -1,4 +1,11 @@
 const url = window.location.pathname;
+// Chargement des données
+  let pagesData = null;
+    const highlight = document.querySelector('.highlight');
+      const navItems = document.querySelectorAll('#projects-nav .nav-item');
+  const carousels = document.querySelectorAll('.carousel');
+let animating = Array.from(carousels).map(() => false);
+  let currentIndices = Array.from(carousels).map(() => 0);
 
 if (url == '/acceuil.html' || url == '/') {
   const headers = document.querySelectorAll(".accordion-header");
@@ -65,8 +72,7 @@ if (url == '/acceuil.html' || url == '/') {
 
 
 if (url == '/projets.html') {
-  // Chargement des données
-  let pagesData = null;
+
 
   fetch('../../json/data.json')
     .then(response => response.json())
@@ -93,7 +99,7 @@ if (url == '/projets.html') {
   }
 
 
-  const highlight = document.querySelector('.highlight');
+  
 
   function moveHighlight(element) {
     highlight.style.top = element.offsetTop + 'px';
@@ -103,11 +109,10 @@ if (url == '/projets.html') {
   // Position initiale
   moveHighlight(document.querySelector('.active'));
 
-  const navItems = document.querySelectorAll('#projects-nav .nav-item');
-  const carousels = document.querySelectorAll('.carousel');
 
-  let currentIndices = Array.from(carousels).map(() => 0);
-  let animating = Array.from(carousels).map(() => false);
+
+
+  
 
   function goToSlide(targetIndex, carouselIndex) {
     if (animating[carouselIndex] || targetIndex === currentIndices[carouselIndex]) return;
@@ -165,8 +170,8 @@ if (url == '/projets.html') {
   });
 }
 
-window.addEventListener('load', function() {
-  document.body.style.visibility = 'visible';
-});
+// window.addEventListener('load', function() {
+//   document.body.style.visibility = 'visible';
+// });
 
 
