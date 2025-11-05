@@ -128,60 +128,6 @@ header {
 
 
 
-@media  (max-width: 768px) {
-  #home-main{
-    flex-direction: column;
-    background-color: red;
-    height: auto !important;
-
-    > #left-part{
-      background-color: blue;
-      flex-direction: column;
-      height: auto;
-      
-
-      > :first-child{
-        background-color: pink;
-        min-height: 0;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-
-
-        > :first-child{
-          width: 100%;
-          height: 60vh;
-        }
-        > :last-child{
-          width: 100%;
-          height: 60vh;
-          flex: none;
-        }
-      }
-      > :last-child{
-        flex-direction: column;
-        > :first-child{
-          width: 100%;
-          height: 70vh;
-          flex: none;
-        }
-        > :last-child{
-          width: 100%;
-          height: 50vh;
-          flex: none;
-        }
-      }
-    }
-
-    > #right-part{
-      width: 100%;
-      height: auto;
-      > :last-child{
-        margin-bottom: var(--margin);
-      }
-    }
-  }
-}
 
 :root {
   /* Couleurs principales */
@@ -213,10 +159,10 @@ header {
 @media  (max-width: 768px) {
   :root{
     /* Espacements */
-  --padding-one: 16px;
-  --padding-two: 6px;
-  --margin: 16px;
-  --gap: 16px;
-  --gap-two: 24px;
+    --padding-one: 16px;
+    --padding-two: 6px;
+    --margin: 16px;
+    --gap: 16px;
+    --gap-two: 24px;
   }
 }

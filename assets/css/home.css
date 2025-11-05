@@ -42,7 +42,6 @@
   }
 
   > #right-part{
-    background-color: blueviolet;
     width: 33%;
     height: 100%;
     display: flex;
@@ -277,4 +276,85 @@
 
 #links:has(a:hover) a:not(:hover) {
   color: var(--disabled-text-color);
+}
+
+@media  (max-width: 768px) {
+  #home-main{
+    flex-direction: column;
+    background-color: red;
+    height: auto !important;
+
+    > #left-part{
+      background-color: blue;
+      flex-direction: column;
+      height: auto;
+      
+
+      > :first-child{
+        background-color: pink;
+        min-height: 0;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+
+
+        > :first-child{
+          width: 100%;
+          height: 60vh;
+        }
+        > :last-child{
+          width: 100%;
+          height: 60vh;
+          flex: none;
+        }
+      }
+      > :last-child{
+        flex-direction: column;
+        > :first-child{
+          width: 100%;
+          height: 60vh;
+          flex: none;
+        }
+        > :last-child{
+          width: 100%;
+          height: 50vh;
+          flex: none;
+        }
+      }
+    }
+
+    > #right-part{
+      width: 100%;
+      height: auto;
+      > :last-child{
+        margin-bottom: var(--margin);
+      }
+    }
+  }
+
+  #contact{
+    > :first-child{
+      font-size: 1em;
+      > span{
+        width: 40%;
+      }
+    }
+    > :last-child{
+      font-size: 2em;
+    }
+  }
+
+  #libel {
+    > div {
+      > img {
+        height: 50%;
+        animation: rotation 7s linear infinite;
+      }
+    }
+
+    > h1 {
+      font-size: 2em;
+      width: 90%;
+    }
+  }
 }
