@@ -167,6 +167,26 @@ if (url == "/projets.html") {
   });
 }
 
-// window.addEventListener('load', function() {
-//   document.body.style.visibility = 'visible';
-// });
+const checkbox = document.getElementById('checkbox');
+  const navLinks = document.getElementById('nav-links');
+  const libel = document.querySelector('.first-div-main');
+
+checkbox.addEventListener('change', () => {
+  const largeur = libel.offsetWidth;
+  const hauteur = libel.offsetHeight;
+
+  if (checkbox.checked) {
+    navLinks.classList.add('show');
+    navLinks.style.width = largeur + "px";
+    navLinks.style.height = hauteur + "px";
+    navLinks.style.animation = ''; // reset
+  } else {
+    navLinks.style.animation = 'fade-out 0.5s ease-out both';
+    
+    navLinks.addEventListener('animationend', function handler() {
+      navLinks.classList.remove('show');
+      navLinks.style.animation = ''; // reset
+      navLinks.removeEventListener('animationend', handler);
+    });
+  }
+});
