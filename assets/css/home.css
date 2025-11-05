@@ -297,12 +297,24 @@
         display: flex;
         flex-direction: column;
 
-
-        > :first-child{
+        > #libel{
           width: 100%;
           height: 60vh;
+
+          > div {
+            > img {
+              height: 50%;
+              animation: rotation 7s linear infinite;
+            }
+          }
+
+          > h1 {
+            font-size: 2em;
+            width: 90%;
+          }
         }
-        > :last-child{
+
+        > #picture{
           width: 100%;
           height: 60vh;
           flex: none;
@@ -310,15 +322,25 @@
       }
       > :last-child{
         flex-direction: column;
-        > :first-child{
-          width: 100%;
-          height: 60vh;
-          flex: none;
-        }
-        > :last-child{
+        > #info{
           width: 100%;
           height: 50vh;
           flex: none;
+        }
+        > #contact{
+          width: 100%;
+          height: 40vh;
+          flex: none;
+
+          > :first-child{
+            font-size: 1em;
+            > span{
+              width: 40%;
+            }
+          }
+          > :last-child{
+            font-size: 2.5em;
+          }
         }
       }
     }
@@ -326,35 +348,36 @@
     > #right-part{
       width: 100%;
       height: auto;
-      > :last-child{
+      gap: 0px;
+      > #projects{
+        margin-bottom: var(--margin);
+      }
+
+      > #links{
         margin-bottom: var(--margin);
       }
     }
   }
 
-  #contact{
-    > :first-child{
-      font-size: 1em;
-      > span{
-        width: 40%;
-      }
-    }
-    > :last-child{
-      font-size: 2em;
+
+  @media  (max-height: 768px) {
+    #info{
+      height: 60vh !important;
     }
   }
 
-  #libel {
-    > div {
-      > img {
-        height: 50%;
-        animation: rotation 7s linear infinite;
-      }
+  @media (min-height: 900px){
+    #libel{
+      height: 50vh !important;
+    }
+    #info{
+      height: 40vh !important;
     }
 
-    > h1 {
-      font-size: 2em;
-      width: 90%;
+    #contact{
+      height: 30vh !important;
     }
   }
 }
+
+
