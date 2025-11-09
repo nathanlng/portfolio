@@ -18,13 +18,17 @@
 
         > .nav-item {
             height: 6vh;
-            color: white;
+            color: var(--text-color);
             padding: 20px 40px;
             cursor: pointer;
             position: relative;
             z-index: 2;
             display: flex;
             align-items: center;
+        }
+
+        > .nav-item.active{
+            color: var(--secondary-text-color);
         }
 
         /* L’élément mobile beige */
@@ -85,6 +89,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                font-size: 2.3em;
             }
         }
 
@@ -102,15 +107,34 @@
 
                 > :nth-child(1){
                     height: 45%;
+                    font-size: 1.3em;
                 }
                 > :nth-child(2){
                     min-height: 0;
                     flex: 1;
                 }
                 > :nth-child(3){
+                    box-sizing: border-box;
                     height: 8vh;
                     background-color: var(--secondary-color);
                     color: var(--secondary-text-color);
+                    font-size: 1.3em;
+                    display: flex;
+                    flex-wrap: wrap;         /* Permet de passer à la ligne quand ça déborde */
+                    align-content: flex-start;
+                    gap: var(--gap-two);
+                    overflow: auto;
+                    padding: 3%;
+                    padding-left: var(--padding-one);
+
+                    > span {
+                        width: 100%;
+                        height: 100%;
+                        > svg{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
                 }
             }
             
@@ -120,12 +144,19 @@
                 flex: 1;
                 gap: var(--gap);
                 min-height: 0;
-
+                
                 > :nth-child(1){
                     height: 35%;
                 }
                 > :nth-child(2){
+                    padding: var(--padding-one);
+                    padding-left: calc(var(--padding-one) * 2);
                     flex: 1;
+                    font-size: 1.3em;
+                    overflow: scroll;
+                    > ul{
+                        line-height: 1.7em;
+                    }
                 }
             }
         }
@@ -140,11 +171,7 @@
     overflow: hidden;
 }
 
-.carousel-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
+
 
 .carousel-item {
     position: absolute;
@@ -165,4 +192,98 @@
 .carousel-item.active {
     opacity: 1;
     z-index: 2;
+}
+
+@media  (max-width: 768px) {
+    #projects-main{
+        height: auto;
+        display: flex;
+        flex-direction: column !important;
+        
+        > #projects-nav{
+            flex-direction: row;
+            width: 100%;
+            min-height: 10vh !important;
+            overflow: scroll;
+            align-items: start;
+            
+            >.highlight{
+                display: none;
+            }
+            > .nav-item {
+                box-sizing: border-box;
+                display: flex;
+                width: max-content !important;
+            }
+        }
+        
+        > #projects-container{
+            > #project-header{
+                
+                min-height: 10vh !important;
+                display: none;
+            }
+
+            > #project-content{
+                flex: none !important;
+                display: flex;
+                flex-direction: column !important;
+    
+                > #left-part{
+                    width: 100%;
+                    height: fit-content;
+                    flex: none !important;
+    
+                    > #description{
+                        flex: none !important;
+                        width: 100% !important; 
+                        height: fit-content !important;
+                    }
+                    
+                    > .carousel-1{
+                        width: 100% !important;
+                        height: 30vh !important;
+                    }
+                    
+                    > #skills{
+                        flex: none !important;
+                        width: 100% !important; 
+                        min-height: 10vh;
+                        height: fit-content !important;
+                        padding: var(--padding-one) !important;
+                    }
+                }
+    
+                > #right-part{
+                    height: max-content;
+                    flex: none;
+                    gap: var(--gap);
+                    min-height: 0;
+                    margin-bottom: var(--margin);
+
+                    > :nth-child(1){
+                        order: 2 !important;
+                        height: 30vh !important;
+                    }
+                    > :nth-child(2){
+                        order: 1 !important;
+                        flex: none;
+                        height: fit-content !important;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .carousel-inner {
+        flex: none;
+        position: relative;
+        width: 100%;
+        height: 30vh;
+    }
+
+    .nav-item.active{
+        color: var(--secondary-color) !important;
+    }
 }
