@@ -88,12 +88,54 @@ if (url == "/projets.html") {
     }
 
     const pageData = pagesData[page];
-    // Mise à jour des contenus
-    Object.entries(pageData.contents).forEach(([id, text]) => {
-      const element = window[id]; // ou document.getElementById(id)
-      if (element) element.textContent = text;
+
+    Object.entries(pageData.contents).forEach(([id, content]) => {
+      const element = document.getElementById(id) || window[id];
+
+      if (!element) return;
+
+      // Cas chaîne simple
+      if (typeof content === "string") {
+        const text = content.replace(/\n/g, "<br>");
+        element.innerHTML = text;
+      }
+
+      // Cas tableau
+      else if (Array.isArray(content)) {
+        element.innerHTML = ""; // on vide l'élément
+
+        // Différenciation SVG ou texte : si id === 'skills', ce sont des SVG à charger
+        if (id === "skills") {
+          content.forEach(iconData => {
+            // iconData peut être { icon: "chemin/vers/icon.svg", name: "Nom" }
+            const img = document.createElement("img");
+            img.src = iconData.icon;  // chemin du SVG
+            img.alt = iconData.name;  // nom pour l'accessibilité
+            img.style.width = "50px"; // optionnel : ajuster la taille
+            img.style.height = "50px"; // optionnel
+            element.appendChild(img);
+          });
+        } else {
+          // Pour les autres tableaux → liste <ul>
+          const ul = document.createElement("ul");
+          content
+            .filter(item => item && item.trim() !== "")
+            .forEach(item => {
+              const li = document.createElement("li");
+              li.textContent = item;
+              ul.appendChild(li);
+            });
+          element.appendChild(ul);
+        }
+      }
+
+      // Cas objet
+      else if (typeof content === "object") {
+        element.textContent = JSON.stringify(content, null, 2);
+      }
     });
   }
+
 
   function moveHighlight(element) {
     highlight.style.top = element.offsetTop + "px";
