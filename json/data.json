@@ -2,34 +2,77 @@
   "pages": {
     "1": {
       "contents": {
-        "contentA": "Contenu A - Page 1",
-        "contentB": "Contenu B - Page 1",
-        "contentC": "Contenu C - Page uabduyea1",
-        "contentD": "Contenu D - Page 1"
+        "skills": "skills",
+        "feature": ["Contenu B - Page 1", "tersgf", "egved", "rgve", "grev"],
+        "name": "Appolo",
+        "description": "description"
       }
     },
     "2": {
       "contents": {
-        "contentA": "Contenu A - Page 2",
-        "contentB": "Contenu B - Page 2",
-        "contentC": "Contenu C - Page 2",
-        "contentD": "Contenu D - Page 2"
+        "skills": 
+        [
+          { "icon": "/assets/icons/html.svg", "name": "HTML" },
+          { "icon": "/assets/icons/css.svg", "name": "CSS" },
+          { "icon": "/assets/icons/js.svg", "name": "JavaScript" },
+          { "icon": "/assets/icons/figma.svg", "name": "Figma" }
+        ],
+        "feature": ["Conception de l’identité visuelle", "Design responsive et animations légères", "Optimisation des performances et des médias", "Hébergement sécurisé (HTTPS) et déploiement complet", "Architecture laptop-first et optimisation SEO", "Liens directs vers les réseaux sociaux et plateformes de streaming"],
+        "name": "Viely",
+        "description": "Création du site viely.fr, vitrine interactive pour le DJ Viely. Le projet visait à retranscrire son identité musicale à travers un design vibrant et une expérience utilisateur fluide. J’ai développé une interface responsive mettant en avant ses sets, son actualité et ses liens de streaming, avec une attention particulière portée à la cohérence visuelle, la performance et la simplicité de navigation. Le résultat : un site immersif qui allie esthétique et efficacité technique."
       }
     },
     "3": {
       "contents": {
-        "contentA": "Contenu A - Page 3",
-        "contentB": "Contenu B - Page 3",
-        "contentC": "Contenu C - Page 3",
-        "contentD": "Contenu D - Page 3"
+        "skills": 
+        [
+          { "icon": "/assets/icons/css.svg", "name": "CSS" },
+          { "icon": "/assets/icons/js.svg", "name": "JavaScript" },
+          { "icon": "/assets/icons/php.svg", "name": "PHP" },
+          { "icon": "/assets/icons/python.svg", "name": "Python" },
+          { "icon": "/assets/icons/oracle.svg", "name": "Oracle" },
+          { "icon": "/assets/icons/postgre.svg", "name": "PostGre" },
+          { "icon": "/assets/icons/tableau.svg", "name": "Tableau Desktop" }
+
+        ],
+        "feature": [
+            "Enregistrement d’affaires via une interface simple",
+            "Consultation et recherche d’affaires enregistrées",
+            "Tri dynamique des résultats et filtres avancés",
+            "Export des données au format Excel",
+            "Tableau de bord de visualisation présentant les indicateurs clés",
+            "Jointures de plusieurs tables pour créer une table consolidée",
+            "Nettoyage et normalisation des données (formats, valeurs manquantes, doublons, etc.)",
+            "Mise à jour quotidienne des montants via un script Python planifié"
+          ],
+        "name": "Suivi des PNT (EDF)",
+        "description": "Le suivi des affaires était initialement géré via un fichier Excel partagé, entraînant des erreurs fréquentes, des pertes de données et des risques de sécurité. De plus, les montants n’étaient pas à jour, nécessitant une récupération manuelle longue et complexe. \nJ’ai développé une application interne en Python permettant d’enregistrer et consulter les affaires de manière centralisée et sécurisée."
       }
     },
     "4": {
       "contents": {
-        "contentA": "Contenu A - Page 4",
-        "contentB": "Contenu B - Page 4",
-        "contentC": "Contenu C - Page 4",
-        "contentD": "Contenu D - Page 4"
+        "skills": 
+        [
+          { "icon": "/assets/icons/css.svg", "name": "CSS" },
+          { "icon": "/assets/icons/js.svg", "name": "JavaScript" },
+          { "icon": "/assets/icons/php.svg", "name": "PHP" },
+          { "icon": "/assets/icons/python.svg", "name": "Python" },
+          { "icon": "/assets/icons/oracle.svg", "name": "Oracle" },
+          { "icon": "/assets/icons/postgre.svg", "name": "PostGre" },
+          { "icon": "/assets/icons/tableau.svg", "name": "Tableau Desktop" }
+
+        ],
+        "feature": 
+          [
+            "Nettoyage, uniformisation et enrichissement des données pour garantir leur cohérence", 
+            "Ajout automatique de champs manquants ou calculés", 
+            "Création d’une base de données propre et centralisée pour l’analyse et la consultation", 
+            "Interface de consultation avec filtres", 
+            "Visualisation des indicateurs clés via Tableau",
+            "Automatisation de la mise à jour quotidienne via tâches planifiées"
+          ],
+        "name": "Suivi des DP (EDF)",
+        "description": "L’entreprise ne disposait d’aucune visibilité simple sur le respect des délais de paiement, les données étant dispersées et difficiles d’accès. \nJ’ai développé un outil en Python qui récupère, nettoie et uniformise les informations issues de plusieurs sources pour créer une base de données centralisée et fiable. \nL’outil permet de consulter les données facilement via une interface et d’obtenir une visualisation claire des retards et indicateurs clés grâce à Tableau."
       }
     }
   }
