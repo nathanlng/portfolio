@@ -1,5 +1,4 @@
 const url = window.location.pathname;
-console.log(window.devicePixelRatio);
 
 // Chargement des données
 let pagesData = null;
@@ -50,17 +49,24 @@ if (url == "/acceuil.html" || url == "/") {
     // Récupérer les dimensions de la div cible
     const largeur = divCible.offsetWidth;
     const hauteur = divCible.offsetHeight;
-
-    // Appliquer les nouvelles dimensions
-    divAnimee.style.width = largeur + "px";
-    divAnimee.style.height = hauteur + "px";
-    divAnimee.style.bottom = "24px";
-    divAnimee.style.left = "24px";
-    divAnimee.style.position = "absolute";
-
-    setTimeout(() => {
+    
+    if (largeur > 768) {
+      // Appliquer les nouvelles dimensions
+      divAnimee.style.width = largeur + "px";
+      divAnimee.style.height = hauteur + "px";
+      divAnimee.style.bottom = "24px";
+      divAnimee.style.left = "24px";
+      divAnimee.style.position = "absolute";
+  
+      setTimeout(() => {
+        window.location.href = "./profil.html";
+      }, 1300); // pause de 1.3 secondes
+      
+    } else {
       window.location.href = "./profil.html";
-    }, 1300); // pause de 1.3 secondes
+      
+    }
+
   }
 
   function resetDiv() {
@@ -71,7 +77,7 @@ if (url == "/acceuil.html" || url == "/") {
 }
 
 if (url == "/projets.html") {
-  fetch("../../json/data.json")
+  fetch("assets/json/data.json")
     .then((response) => response.json())
     .then((data) => {
       pagesData = data.pages;

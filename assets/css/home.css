@@ -208,7 +208,7 @@
 
     > :last-child {
       width: 85%;
-      font-size: 1.15em;
+      font-size: 1.1em;
       font-weight: 300;
       line-height: 125%;
     }
@@ -287,17 +287,14 @@
 @media  (max-width: 768px) {
   #home-main{
     flex-direction: column;
-    background-color: red;
     height: auto !important;
 
     > #left-part{
-      background-color: blue;
       flex-direction: column;
       height: auto;
       
 
       > :first-child{
-        background-color: pink;
         min-height: 0;
         height: auto;
         display: flex;
@@ -327,26 +324,31 @@
         }
       }
       > :last-child{
+        height: fit-content !important;
         flex-direction: column;
         > #info{
           width: 100%;
           height: 50vh;
           flex: none;
         }
-        > #contact{
+        > #contact-link{
+          flex: none !important;
           width: 100%;
-          height: 40vh;
-          flex: none;
+          height: 35vh;
 
-          > :first-child{
-            font-size: 1em;
-            > span{
-              width: 40%;
+          > #contact{
+
+            > :first-child{
+              font-size: 1em;
+              > span{
+                width: 40%;
+              }
+            }
+            > :last-child{
+              font-size: 2.5em;
             }
           }
-          > :last-child{
-            font-size: 2.5em;
-          }
+
         }
       }
     }
@@ -370,6 +372,10 @@
     #info{
       height: 60vh !important;
     }
+
+    #contact-link{
+      height: 40vh !important;
+    }
   }
 
   @media (min-height: 900px){
@@ -380,7 +386,7 @@
       height: 40vh !important;
     }
 
-    #contact{
+    #contact-link{
       height: 30vh !important;
     }
   }

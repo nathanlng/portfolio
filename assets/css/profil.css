@@ -7,6 +7,7 @@
     flex-direction: column;
     gap: var(--gap);
     position: relative;
+
     
     > #upper-part{
         width: 100%;
@@ -21,18 +22,20 @@
         > #presentation{
             width: 70%;
             height: 100%;
+            min-height: 0px;
             display: flex;
             flex-direction: column;
-            gap: var(--gap);
+            overflow: scroll;
 
             > h1 {
                 margin: var(--margin-two) 0px var(--margin-two) var(--margin);
                 font-size: 3em;
+                line-height: 1% !important;
             }
 
             > p{
                 margin-left: var(--margin);
-                font-size: 1.25em;
+                font-size: 1.1em;
                 width: 75%;
                 line-height: 140%;
             }
@@ -57,6 +60,7 @@
         width: 100%;
         display: flex;
         gap: var(--gap);
+        min-height: 0px;
         
         > #skills{
             flex: 1;
@@ -68,54 +72,61 @@
 
         > #experience{
             flex: 1;
-
+            min-height: 0px;
+            overflow:scroll !important;
+            
             > h2{
-                margin-bottom: var(--margin);
+                margin-bottom: 16px;
                 font-size: 1.7em;
+                line-height: 50%;
             }
-
+            
             > .exp-container{
                 display: flex;
                 height: fit-content;
                 gap: 10px;
-
+                width: 100%;
+                
                 > .exp-margin{
                     width: 5%;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     gap: 14px;
-
+                    
                     > :first-child{
                         background-color: var(--secondary-color);
                         border-radius: 50%;
                         height: 15px;
                         width: 15px;
                     }
-
+                    
                     > :last-child{
                         background-color: var(--secondary-color);
                         width: 3px;
                         flex: 1;
                     }
                 }
-
+                
                 > .exp-content{
+                    width: 100%;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 4px;
-
+                    
                     > h4{
+                        width: 100%;
                         font-weight: bold;
                         > span{
                             margin-left: 4px;
                             font-weight: lighter;
                         }
                     }
-
-
+                    
+                    
                     > ul{
+                        width: 100%;
                         margin-top: 4px;
                         position: relative;
                         left: 20px;
@@ -133,6 +144,7 @@
     height: 100%;
     border-radius: var(--border-radius-one);
     background-color: var(--background-color-two);
+    pointer-events: none;
 }
 
 .slider-container {
@@ -207,8 +219,8 @@
                 height: 10vw;
             }
 
-            > h1{
-                font-size: 2.5em;
+            > div{
+                font-size: 2.4em !important;
             }
         }
         

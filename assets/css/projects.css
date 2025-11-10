@@ -106,8 +106,9 @@
                 gap: var(--gap);
 
                 > :nth-child(1){
+                    overflow: auto;
                     height: 45%;
-                    font-size: 1.3em;
+                    font-size: 1.1em;
                 }
                 > :nth-child(2){
                     min-height: 0;
@@ -121,22 +122,13 @@
                     font-size: 1.3em;
                     display: flex;
                     flex-wrap: no-wrap;         /* Permet de passer à la ligne quand ça déborde */
-                    align-content: flex-start;
+                    align-items: center;
                     gap: var(--gap-two);
                     overflow-y: hidden;
                      overflow-x: auto;     /* permet le scroll horizontal */
                     white-space: nowrap;
-                    padding: 3%;
+                    padding: 0px;
                     padding-left: var(--padding-one);
-
-                    > span {
-                        width: 100%;
-                        height: 100%;
-                        > svg{
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
                 }
             }
             
@@ -154,8 +146,8 @@
                     padding: var(--padding-one);
                     padding-left: calc(var(--padding-one) * 2);
                     flex: 1;
-                    font-size: 1.3em;
-                    overflow: scroll;
+                    font-size: 1.1em;
+                    overflow: auto;
                     > ul{
                         line-height: 1.7em;
                     }
@@ -246,6 +238,7 @@
                         flex: none !important;
                         width: 100% !important; 
                         height: fit-content !important;
+                        
                     }
                     
                     > .carousel-1{
@@ -294,5 +287,9 @@
 
     .nav-item.active{
         color: var(--secondary-color) !important;
+    }
+
+    .nav-links{
+        top: calc(20vh + var(--margin) * 2) !important;
     }
 }
