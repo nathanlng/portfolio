@@ -230,24 +230,30 @@
   scale: 1;
 }
 
+#contact-link{
+  text-decoration: none;
+}
+
 #contact {
+  height: 100%;
+  color: var(--secondary-text-color);
   background-color: var(--secondary-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: var(--secondary-text-color);
-
+  
   > :first-child {
     display: flex;
     justify-content: space-between;
     pointer-events: visible;
-
+    
     > span {
       width: 30%;
       font-size: 1.1em;
     }
   }
-
+  
   > :last-child {
     font-size: 3em;
     margin-bottom: 8px;

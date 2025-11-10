@@ -113,17 +113,19 @@
                     min-height: 0;
                     flex: 1;
                 }
-                > :nth-child(3){
+                > #skills{
                     box-sizing: border-box;
                     height: 8vh;
                     background-color: var(--secondary-color);
                     color: var(--secondary-text-color);
                     font-size: 1.3em;
                     display: flex;
-                    flex-wrap: wrap;         /* Permet de passer à la ligne quand ça déborde */
+                    flex-wrap: no-wrap;         /* Permet de passer à la ligne quand ça déborde */
                     align-content: flex-start;
                     gap: var(--gap-two);
-                    overflow: auto;
+                    overflow-y: hidden;
+                     overflow-x: auto;     /* permet le scroll horizontal */
+                    white-space: nowrap;
                     padding: 3%;
                     padding-left: var(--padding-one);
 
@@ -189,6 +191,11 @@
     object-fit: cover;
 }
 
+.mobile-picture{
+    object-fit: contain !important;
+    background-color: var(--background-color-one);
+}
+
 .carousel-item.active {
     opacity: 1;
     z-index: 2;
@@ -204,7 +211,8 @@
             flex-direction: row;
             width: 100%;
             min-height: 10vh !important;
-            overflow: scroll;
+            overflow-y: hidden;
+            overflow-x: auto;
             align-items: start;
             
             >.highlight{
@@ -251,6 +259,7 @@
                         min-height: 10vh;
                         height: fit-content !important;
                         padding: var(--padding-one) !important;
+                        flex-wrap: wrap;
                     }
                 }
     

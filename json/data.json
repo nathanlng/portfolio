@@ -2,10 +2,27 @@
   "pages": {
     "1": {
       "contents": {
-        "skills": "skills",
-        "feature": ["Contenu B - Page 1", "tersgf", "egved", "rgve", "grev"],
-        "name": "Appolo",
-        "description": "description"
+        "skills": 
+          [
+            { "icon": "/assets/icons/html.svg", "name": "HTML" },
+            { "icon": "/assets/icons/css.svg", "name": "CSS" },
+            { "icon": "/assets/icons/js.svg", "name": "JavaScript" },
+            { "icon": "/assets/icons/php.svg", "name": "PHP" },
+            { "icon": "/assets/icons/mysql.svg", "name": "MySQL" },
+            { "icon": "/assets/icons/figma.svg", "name": "Figma" }
+          ],
+        "feature": 
+          [
+            "Catalogue des cours avec description, niveau, durée, prix et disponibilités", 
+            "Espace utilisateur pour consulter ses réservations", 
+            "Paiement en ligne sécurisé", 
+            "e-mails de confirmation après réservation", 
+            "Interface d’administration sécurisée", 
+            "Ajout, modification ou suppression de cours", 
+            "Gestion des réservations"
+          ],
+        "name": "Atelier Emadone",
+        "description": "Développement d’un site web cours.emadone.fr, optimisé mobile, permettant aux utilisateurs de consulter et réserver des cours de couture en ligne.\nL’interface offre un catalogue clair des ateliers et un système de réservation simple.\nUne interface administrateur permet d’ajouter, modifier ou supprimer des cours.\nLe tout a été conçu pour offrir une expérience fluide et sécurisée."
       }
     },
     "2": {
@@ -26,25 +43,27 @@
       "contents": {
         "skills": 
         [
-          { "icon": "/assets/icons/css.svg", "name": "CSS" },
-          { "icon": "/assets/icons/js.svg", "name": "JavaScript" },
           { "icon": "/assets/icons/php.svg", "name": "PHP" },
           { "icon": "/assets/icons/python.svg", "name": "Python" },
           { "icon": "/assets/icons/oracle.svg", "name": "Oracle" },
           { "icon": "/assets/icons/postgre.svg", "name": "PostGre" },
-          { "icon": "/assets/icons/tableau.svg", "name": "Tableau Desktop" }
-
+          { "icon": "/assets/icons/tableau.svg", "name": "Tableau Desktop" },
+          { "icon": "/assets/icons/git.svg", "name": "Git" },
+          { "icon": "/assets/icons/js.svg", "name": "JavaScript" },
+          { "icon": "/assets/icons/css.svg", "name": "CSS" }
+          
+          
         ],
         "feature": [
-            "Enregistrement d’affaires via une interface simple",
-            "Consultation et recherche d’affaires enregistrées",
-            "Tri dynamique des résultats et filtres avancés",
-            "Export des données au format Excel",
-            "Tableau de bord de visualisation présentant les indicateurs clés",
-            "Jointures de plusieurs tables pour créer une table consolidée",
-            "Nettoyage et normalisation des données (formats, valeurs manquantes, doublons, etc.)",
-            "Mise à jour quotidienne des montants via un script Python planifié"
-          ],
+          "Enregistrement d’affaires via une interface simple",
+          "Consultation et recherche d’affaires enregistrées",
+          "Tri dynamique des résultats et filtres avancés",
+          "Export des données au format Excel",
+          "Tableau de bord de visualisation présentant les indicateurs clés",
+          "Jointures de plusieurs tables pour créer une table consolidée",
+          "Nettoyage et normalisation des données (formats, valeurs manquantes, doublons, etc.)",
+          "Mise à jour quotidienne des montants via un script Python planifié"
+        ],
         "name": "Suivi des PNT (EDF)",
         "description": "Le suivi des affaires était initialement géré via un fichier Excel partagé, entraînant des erreurs fréquentes, des pertes de données et des risques de sécurité. De plus, les montants n’étaient pas à jour, nécessitant une récupération manuelle longue et complexe. \nJ’ai développé une application interne en Python permettant d’enregistrer et consulter les affaires de manière centralisée et sécurisée."
       }
@@ -53,13 +72,14 @@
       "contents": {
         "skills": 
         [
-          { "icon": "/assets/icons/css.svg", "name": "CSS" },
-          { "icon": "/assets/icons/js.svg", "name": "JavaScript" },
           { "icon": "/assets/icons/php.svg", "name": "PHP" },
           { "icon": "/assets/icons/python.svg", "name": "Python" },
           { "icon": "/assets/icons/oracle.svg", "name": "Oracle" },
           { "icon": "/assets/icons/postgre.svg", "name": "PostGre" },
-          { "icon": "/assets/icons/tableau.svg", "name": "Tableau Desktop" }
+          { "icon": "/assets/icons/tableau.svg", "name": "Tableau Desktop" },
+          { "icon": "/assets/icons/git.svg", "name": "Git" },
+          { "icon": "/assets/icons/js.svg", "name": "JavaScript" },
+          { "icon": "/assets/icons/css.svg", "name": "CSS" }
 
         ],
         "feature": 

@@ -76,7 +76,7 @@ if (url == "/projets.html") {
     .then((data) => {
       pagesData = data.pages;
       // Affichage de la page 1 au chargement
-      loadPage("1");
+      loadPage("2");
     })
     .catch((error) => console.error("Erreur de chargement:", error));
 
