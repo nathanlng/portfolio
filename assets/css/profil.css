@@ -43,7 +43,7 @@
         > #picture{
             flex: 1;
             padding: 0px;
-            background-color: red;
+            background-color: var(--background-color-two);
             
             > img{
                 border-radius: var(--border-radius-one);
